@@ -17,6 +17,6 @@ public class KafkaTestProducer {
 
     public void sendEvent(PersonEvent event) {
         log.info("New event [{}]", event);
-        kafkaTemplate.send(properties.getTopicName(), event);
+        kafkaTemplate.send(properties.getTopicName() ,event);
     }
 }

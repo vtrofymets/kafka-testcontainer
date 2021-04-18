@@ -4,7 +4,7 @@ import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.junit.ClassRule;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.runner.RunWith;
 import org.kafkatest.dto.PersonEvent;
 import org.kafkatest.listener.KafkaTestListener;
 import org.kafkatest.producer.KafkaTestProducer;
@@ -17,7 +17,7 @@ import org.springframework.kafka.core.DefaultKafkaProducerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
 import org.springframework.test.annotation.DirtiesContext;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.testcontainers.containers.KafkaContainer;
 import org.testcontainers.utility.DockerImageName;
 
@@ -25,8 +25,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-//@RunWith(SpringRunner.class)
-@ExtendWith(SpringExtension.class)
+@RunWith(SpringRunner.class)
 @SpringBootTest(classes = KafkaTestContainerApplication.class)
 @Import(KafkaTestContainerApplicationTests.KafkaTestConfiguration.class)
 @DirtiesContext
